@@ -14,8 +14,32 @@ public class TMCPDbContext : IdentityDbContext<User>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        // Customize the ASP.NET Identity model and override the defaults if needed.
-        // For example, you can rename the ASP.NET Identity table names and more.
-        // Add your customizations after calling base.OnModelCreating(builder);
+
+        ////Seed roles
+        //builder.Entity<IdentityRole>().HasData(
+        //    new IdentityRole { Id= "1", Name = "SuperAdmin", NormalizedName = "SUPERADMIN"},
+        //    new IdentityRole { Id = "2", Name = "Admin", NormalizedName = "ADMIN"},
+        //    new IdentityRole { Id = "3", Name = "TeamManager", NormalizedName = "TEAMMANAGER" },
+        //    new IdentityRole { Id = "4", Name = "Member", NormalizedName = "MEMBER" }
+
+        //    );
+
+        //var hasher = new PasswordHasher<User>();
+        //var superAdmin = new User
+        //{
+        //    Id = "1",
+        //    UserName = "superadmin@tcmp.com",
+        //    Email = "superadmin@tcmp.com",
+        //    NormalizedEmail = "SUPERADMIN@TCMP.COM",
+        //    NormalizedUserName = "SUPERADMIN@TCMP.COM",
+        //    EmailConfirmed = true,
+        //    PasswordHash = hasher.HashPassword(null, "SuperAdmin@123")
+        //};
+
+        //builder.Entity<User>().HasData(superAdmin );
+
+        //builder.Entity<IdentityUserRole<string>>().HasData(
+        //    new IdentityUserRole<string> { RoleId = "1", UserId = "1" });
+
     }
 }
