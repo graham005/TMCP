@@ -1,0 +1,24 @@
+﻿@using TMCP.Models.ViewModel
+@model List<UserRoleViewModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model){
+            <tr>
+                <td>@user.Email</td>
+                <td>@string.Join(",", user.Roles)</td>
+                <td>
+                    <a asp-action="ManageRoles" asp-route-userId="@user.UserId" class="btn btn-primary" >Manage Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
